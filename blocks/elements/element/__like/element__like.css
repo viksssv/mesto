@@ -9,3 +9,12 @@
     background-repeat: no-repeat;
     background-color: #FFFFFF;
 }
+
+.element__like:hover {
+    opacity: 0.5;
+}
+
+.element__like:active {
+    background-image: url(/images/like-active.svg);
+    opacity: 1;
+}
