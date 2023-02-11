@@ -1,4 +1,4 @@
-.popup__text {
+.popup__text-occupation {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 555px) {
-    .popup__text {
+    .popup__text-occupation {
         width: 238px;
     }
 }

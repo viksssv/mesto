@@ -8,11 +8,17 @@
     margin-top: 155px;
 }
 
+.popup__close-button:hover {
+    opacity: 0.6;
+}
+
+
 @media screen and (max-width: 555px) {
     .popup__close-button {
         width: 20px;
         height: 20px;
         margin-top: 0;
         align-self: end;
+        background-size: contain;
     }
 }
