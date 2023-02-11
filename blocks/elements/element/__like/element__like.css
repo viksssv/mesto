@@ -1,7 +1,7 @@
 .element__like {
     width: 22px;
     height: 19px;
-    background-image: url(/images/like.svg);
+    background-image: url(../../../../images/like.svg);
     background-size: contain;
     border: none;
     justify-self: end;
@@ -15,6 +15,6 @@
 }
 
 .element__like:active {
-    background-image: url(/images/like-active.svg);
+    background-image: url(../../../../images/like-active.svg);
     opacity: 1;
 }

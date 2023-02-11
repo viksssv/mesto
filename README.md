@@ -3,7 +3,7 @@
 <p>Создана файловая структура по БЭМ (Nested). Применена технология DOM, верстка выполнена с помощью Flexbox, Grid Layout и Java Script. Изучены пользовательские события и добавлены интерактивные формы с проверкой данных.</p>
 <h2>Ссылка на GitHub Pages</h2>
 <ul>
-<li>https://viksssv.github.io/russian-travel/</li>
+<li>https://viksssv.github.io/mesto/</li>
 </ul>
 
 
