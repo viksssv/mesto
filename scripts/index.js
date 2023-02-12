@@ -5,70 +5,31 @@
     profileEditButton.addEventListener('click', function(){
         let popup = document.querySelector('.popup');
         popup.classList.add('popup_opened');
-    })
+        let popupTextName = document.querySelector('.popup__text-name');
+        let popupTextOccupation = document.querySelector('.popup__text-occupation');
+        let profileName = document.querySelector('.profile__name');
+        let profileOccupation = document.querySelector('.profile__occupation')
+        popupTextName.value = profileName.textContent;
+        popupTextOccupation.value = profileOccupation.textContent;
+    });
 
     let popupCloseButton = document.querySelector('.popup__close-button');
     popupCloseButton.addEventListener('click', function(){
         let popup = document.querySelector('.popup');
         popup.classList.remove('popup_opened');
-    })
+    });
 
-     let profileName = 'Жак-Ив Кусто';
-     let profileOccupation  = 'Исследователь океана';
+    function handleFormSubmit (evt) {
+        evt.preventDefault();
+        let profileName = document.querySelector('.profile__name');
+        let popupTextName = document.querySelector('.popup__text-name');
+        let popupTextOccupation = document.querySelector('.popup__text-occupation');
+        let profileOccupation = document.querySelector('.profile__occupation');
+        profileName.textContent = popupTextName.value;
+        profileOccupation.textContent = popupTextOccupation.value;
+        let popup = document.querySelector('.popup');
+        popup.classList.remove('popup_opened');
+    }
 
-     let profileNameElement = document.querySelector('.profile__name');
-     profileNameElement.textContent = profileName;
-
-     let profileOccupationElement = document.querySelector('.profile__occupation');
-     profileOccupationElement.textContent = profileOccupation;
-
-
-    let popupTextName = document.querySelector('.popup__text-name');
-     popupTextName.value = profileName;
-
-    let popupTextOccupation = document.querySelector('.popup__text-occupation');
-     popupTextOccupation.value = profileOccupation;
-
-
-
-     popupTextName.addEventListener('input', function (event){
-        let value = event.target.value;
-         profileNameElement.textContent = value;
-     })
-
-     popupTextOccupation.addEventListener('input', function (event){
-         let value = event.target.value;
-        profileOccupationElement.textContent = value;
-     })
-
-
-
-    // let popup = document.querySelector('.popup'); 
-    // let popupTextName = document.querySelector('.popup__text-name');
-    // let popupTextOccupation = document.querySelector('.popup__text-occupation');
-
-    // function popupSubmitButton (evt) {
-    // evt.preventDefault();
-    // let popupTextName = document.querySelector('.popup__text-name');
-    // popupTextName.value = profileName;
-    // let popupTextOccupation = document.querySelector('.popup__text-occupation');
-    // popupTextOccupation.value = profileOccupation;
-
-    // popupTextName.addEventListener('input', function (event){
-    //     let value = event.target.value;
-    //      profileNameElement.textContent = value;
-    //  })
-
-    //  popupTextOccupation.addEventListener('input', function (event){
-    //     let value = event.target.value;
-    //      profileOccupationElement.textContent = value;
-    // })
-
-
-    // }
-
-    
-
-    // popup.addEventListener('submit', handlePopupSubmitButton); 
-
-
+    let popupForm = document.querySelector('.popup__form');
+    popupForm.addEventListener('submit', handleFormSubmit); 
