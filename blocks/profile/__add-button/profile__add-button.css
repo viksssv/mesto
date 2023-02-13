@@ -5,12 +5,13 @@
     box-sizing: border-box;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
-    background-color: #000000;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 22px;
     align-self: center;
     justify-self: end;
+    cursor: pointer;
 }
 
 .profile__add-button:hover {

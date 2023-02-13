@@ -15,71 +15,69 @@
         <section class="profile">
             <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar"/>
             <div class="profile__info">
-                <p class="profile__name">Жак-Ив Кусто</p>
-                <button class="profile__edit-button"></button>
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button type="button" aria-label="Редактировать профиль" class="profile__edit-button"></button>
                 <p class="profile__occupation">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button type="button" aria-label="Добавить" class="profile__add-button"></button>
         </section>
         <section class="elements">
             <div class="element">
                 <img src="./images/chukotka.jpg" alt="Чукотка" class="element__mask"/>
                 <div class="element__group">
-                    <a class="element__text">Чукотские острова</a>
-                    <button class="element__like"></button>
+                    <h2 class="element__text">Чукотские острова</h2>
+                    <button type="button" aria-label="Мне нравится" class="element__like"></button>
                 </div>
             </div>
-            <div class="element">
+            <article class="element">
                 <img src="./images/dombai.jpg" alt="Домбай" class="element__mask"/>
                 <div class="element__group">
-                    <a class="element__text">Домбай</a>
-                    <button class="element__like"></button>
+                    <h2 class="element__text">Домбай</h2>
+                    <button type="button" aria-label="Мне нравится" class="element__like"></button>
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/Elbrus.jpg" alt="Гора Эльбрус" class="element__mask"/>
                 <div class="element__group">
-                    <a class="element__text">Гора Эльбрус</a>
-                    <button class="element__like"></button>
+                    <h2 class="element__text">Гора Эльбрус</h2>
+                    <button type="button" aria-label="Мне нравится" class="element__like"></button>
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/primore.jpg" alt="Приморье" class="element__mask"/>
                 <div class="element__group">
-                    <a class="element__text">Приморье</a>
-                    <button class="element__like"></button>
+                    <h2 class="element__text">Приморье</h2>
+                    <button type="button" aria-label="Мне нравится" class="element__like"></button>
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/siberia.jpg" alt="Сибирь" class="element__mask"/>
                 <div class="element__group">
-                    <a class="element__text">Сибирь</a>
-                    <button class="element__like"></button>
+                    <h2 class="element__text">Сибирь</h2>
+                    <button type="button" aria-label="Мне нравится" class="element__like"></button>
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/zabaikalie.jpg" alt="Забайкалье" class="element__mask"/>
                 <div class="element__group">
-                    <a class="element__text">Забайкалье</a>
-                    <button class="element__like"></button>
+                    <h2 class="element__text">Забайкалье</h2>
+                    <button type="button" aria-label="Мне нравится" class="element__like"></button>
                 </div>
-            </div>
+            </article>
         </section>
     </main>
     <footer class="footer">
-        <p class="footer__logo">&copy; 2023. Mesto Russia</p>
+        <p class="footer__logo">&copy; 2023 Mesto Russia</p>
     </footer>
     <div class="popup">
         <div class="popup__container">
-            <form class="popup__form">
-                <h1 class="popup__header">Редактировать профиль</h1>
-                <div class="popup__content">
-                    <input type="text" placeholder="Имя" class="popup__text-name">
-                    <input type="text" placeholder="О себе" class="popup__text-occupation">
-                    <button type="submit" class="popup__submit-button">Сохранить</button> 
-                </div>
-            </form>>
-            <button type="reset" class="popup__close-button"></button>
+            <button type="button" aria-label="Закрыть" class="popup__close-button"></button>
+            <form name="profile-edit-form" class="popup__form">
+                <h3 class="popup__header">Редактировать профиль</h3>
+                <input name="input-name" type="text" placeholder="Имя" class="popup__input popup__input_text_name">
+                <input name="input-occupation" type="text" placeholder="О себе" class="popup__input popup__input_text_occupation">
+                <button type="submit" class="popup__submit-button">Сохранить</button> 
+            </form>
         </div>
     </div>
     <script src="./scripts/index.js"></script>

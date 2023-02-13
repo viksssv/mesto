@@ -1,7 +1,6 @@
 .element__group {
     max-width: 246px;
     margin: 0 auto;
-    padding-top: 25px;
     display: grid;
     grid-template-columns: 3fr 1fr;
 }

@@ -1,35 +1,33 @@
     let profileEditButton = document.querySelector('.profile__edit-button');
-    if (!profileEditButton) {
-        throw new Error('no profileEditButton');
-    }
-    profileEditButton.addEventListener('click', function(){
-        let popup = document.querySelector('.popup');
+    let popup = document.querySelector('.popup');
+    let popupTextName = document.querySelector('.popup__input_text_name');
+    let popupTextOccupation = document.querySelector('.popup__input_text_occupation');
+    let profileName = document.querySelector('.profile__name');
+    let profileOccupation = document.querySelector('.profile__occupation');
+    let popupCloseButton = document.querySelector('.popup__close-button');
+    let popupForm = document.querySelector('.popup__form');
+    let popupSubmitButton = document.querySelector('.popup__submit-button')
+
+    function profileEditClick() {
         popup.classList.add('popup_opened');
-        let popupTextName = document.querySelector('.popup__text-name');
-        let popupTextOccupation = document.querySelector('.popup__text-occupation');
-        let profileName = document.querySelector('.profile__name');
-        let profileOccupation = document.querySelector('.profile__occupation')
         popupTextName.value = profileName.textContent;
         popupTextOccupation.value = profileOccupation.textContent;
-    });
+    }
 
-    let popupCloseButton = document.querySelector('.popup__close-button');
-    popupCloseButton.addEventListener('click', function(){
-        let popup = document.querySelector('.popup');
+    profileEditButton.addEventListener('click', profileEditClick);
+
+    function popupClose() {
         popup.classList.remove('popup_opened');
-    });
+    };
+
+    popupCloseButton.addEventListener('click', popupClose);
 
     function handleFormSubmit (evt) {
         evt.preventDefault();
-        let profileName = document.querySelector('.profile__name');
-        let popupTextName = document.querySelector('.popup__text-name');
-        let popupTextOccupation = document.querySelector('.popup__text-occupation');
-        let profileOccupation = document.querySelector('.profile__occupation');
         profileName.textContent = popupTextName.value;
         profileOccupation.textContent = popupTextOccupation.value;
-        let popup = document.querySelector('.popup');
-        popup.classList.remove('popup_opened');
+        popupClose();
     }
 
-    let popupForm = document.querySelector('.popup__form');
     popupForm.addEventListener('submit', handleFormSubmit); 
+

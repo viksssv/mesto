@@ -1,5 +1,5 @@
-.popup__text-occupation {
-    font-family: 'Inter';
+.popup__input {
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -8,10 +8,11 @@
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     width: 358px;
+    padding-bottom: 13px;
 }
-
+ 
 @media screen and (max-width: 555px) {
-    .popup__text-occupation {
+    .popup__input {
         width: 238px;
     }
 }

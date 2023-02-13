@@ -1,11 +1,12 @@
 .footer__logo {
     margin: 0;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     color: #545454;
+    width: 100%;
 }
 
 @media screen and (max-width: 320px) {
