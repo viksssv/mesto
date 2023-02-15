@@ -7,6 +7,7 @@
 
 @media screen and (max-width: 684px) {
     .profile__edit-info {
+        justify-content: center;
         gap: 10px;
     }
 }
