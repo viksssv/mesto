@@ -22,8 +22,8 @@
   };
 
   //Закрытие popup нажатием на крестик 
-  const exitButton = document.querySelectorAll('.popup__close-button');
-  exitButton.forEach(function(button) {
+  const exitButtons = document.querySelectorAll('.popup__close-button');
+  exitButtons.forEach(function(button) {
     button.addEventListener('click', function (evt) {
       closePopup(evt.target.closest('.popup')) 
     });
@@ -70,31 +70,32 @@
     name: 'Забайкалье',
     link: './images/zabaikalie.jpg'
   }
-];
+  ];
 
-  //Функция создания карточки, ее удаление, реализация лайка
-  function createCard(name, link) {
-  // работа с template-элементами
-    const CardTemplate = document.getElementById('card-template').content;
-    const newCard = CardTemplate.querySelector('.element').cloneNode(true);
-    newCard.querySelector('.element__text').textContent = name;
-    newCard.querySelector('.element__like').addEventListener('click', function (evt) {
-      evt.target.classList.toggle('element__like_active')});
-    newCard.querySelector('.element__delete-button').addEventListener('click', function () {
-      newCard.remove();
-    });
-    elements.prepend(newCard);
-    //реализация image-popup
+  function getCard(name, link) {
+    const cardTemplate = document.getElementById('card-template').content;
+    const newCard = cardTemplate.querySelector('.element').cloneNode(true);
+    const newCardTitle = newCard.querySelector('.element__text');
+    newCardTitle.textContent = name;
     const newCardImage = newCard.querySelector('.element__mask');
-    newCardImage.src = link;
-    newCardImage.alt = name;
-    newCardImage.addEventListener('click', function() {
-      openPopup(imagePopup);
-      popupImageTitle.textContent = name;
-      popupImage.src = link;
-      popupImage.alt = name;
+    newCardImage.setAttribute('src', link);
+    newCard.querySelector('.element__like').addEventListener('click', function (evt) {
+        evt.target.classList.toggle('element__like_active')});
+    newCard.querySelector('.element__delete-button').addEventListener('click', function () {
+        newCard.remove();
+    }); 
+    newCardImage.addEventListener('click', function() { 
+      openPopup(imagePopup); 
+      popupImageTitle.textContent = name; 
+      popupImage.src = link; 
+      popupImage.alt = name; 
     });
-    return(newCard);
+    return newCard;
+  }
+  
+  function createCard(name, link) {
+    const newCard = getCard(name, link)
+    elements.prepend(newCard);
   }
 
   //Добавление карточек на страницу методом ForEach, где параметр card - текущий элемент массива  
@@ -116,3 +117,4 @@
     closePopup(cardPopup);
   };
   document.forms['cardPopupForm'].addEventListener('submit', handleCardPopupFormSubmit); 
+ 
